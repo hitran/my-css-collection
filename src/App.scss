@@ -1,0 +1,22 @@
+@import './common-modules/color.scss';
+.App {
+  display: flex;
+  color: $default-text-color;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1.Title {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+
+@media screen and (min-width: 500px) {
+  h1.Title {
+    font-size: 30px;
+  }
+}

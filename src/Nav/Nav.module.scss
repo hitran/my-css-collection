@@ -1,0 +1,96 @@
+@import '../common-modules//color';
+
+.NavBar {
+    padding: 30px 0;
+    box-shadow: 0px 40px 60px -20px rgba(0,0,0,0.2);
+    position: fixed;
+    top: 0;
+    left: -100%;
+    min-height: 100vh;
+    background-color: $white;
+    z-index: 2;
+    width: 100%;
+    transition: 0.3s ease-in-out;
+    &.open {
+        left: 0;
+    }
+}
+
+.BurgerButton {
+    margin-left: 20px;
+    background-color: transparent;
+    border: none;
+    position: fixed;
+    top: 20px;
+    &:focus {
+        outline: none;
+    }
+    span {
+        background-color: black;
+        display: block;
+        height: 2px;
+        width: 25px;
+        margin-bottom: 4px;
+    }
+}
+
+.CloseButton {
+    margin-left: 20px;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    z-index: 3;
+    &:focus {
+        outline: none;
+    }
+    span {
+        background-color: black;
+        display: block;
+        height: 2px;
+        width: 25px;
+        &:nth-child(1) {
+            transform: rotate(45deg);
+        }
+        &:nth-child(2) {
+            transform: rotate(-45deg) translate(2px, -1px);
+        }
+    }
+
+}
+
+.NavBar ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 20px;
+    border-top: 1px solid $default-border-color;
+}
+
+.NavBar ul li {
+    border-bottom: 1px solid $default-border-color;
+    padding: 5px 0 5px 20px;
+    transition: 0.3 ease-in-out;
+    &:hover {
+        background-color: $default-text-color;
+        cursor: pointer;
+        a {
+            color: $default-background-color;
+        }
+        
+    }
+}
+
+.NavBar ul li a {
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+    color: $default-text-color;
+}
+
+@media screen and (min-width: 600px) {
+    .NavBar {
+        width: 250px;
+        transition: 0.5s ease-in-out;
+    }
+}

@@ -12,6 +12,10 @@
     background-color: $light-pink;
 }
 
+h1.Title {
+    font-size: 24px;
+}
+
 .SongInfo, .MusicPlayerControls {
     border-radius: 15px;
 }
@@ -47,12 +51,19 @@
     span {
         display: inline-block;
         margin: 10px;
+        &:hover {
+            cursor: pointer;
+        }
     }
     svg {
         color: $default-text-color;
         width: 25px !important;
         height: 25px;
         opacity: 0.6;
+        transition: 0.2s ease-in-out;
+        &:hover {
+            color: $bright-red;
+        }
     }
 
     .PlayBtn svg {
@@ -72,24 +83,31 @@
         border-radius: 50%;
         display: flex;
         align-items: center;
-        background-color: $dark-brown;
-        border: 36px solid rgba(219, 80, 74, 0.7);
-        border-top-color: rgba(174,97,110, 0.7);
-        border-right-color: rgba(174,97,110, 0.7);
-        animation: musicPlaying 3s linear 0s infinite;
+        animation: musicPlaying 4.5s linear 0s infinite;
         position: absolute;
         top: -69px;
         left: 24px;
-        span:first-child {
+        overflow: hidden;
+        opacity: 0.8;
+        img {
+            width: 190px;
+            height: 190px;
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            border-radius: 50%;
+            z-index: -1;
+        }
+        span {
             background-color: $light-pink;
-            width: 15px;
-            height: 15px;
+            width: 27px;
+            height: 27px;
             margin: auto;
             border-radius: 50%;
             z-index: 3;
+            border: 8px solid $default-text-color;
         }
     }
-    
 }
 .SongDuration, .ProgressBar, .SongInfo > p {
     width: 170px;

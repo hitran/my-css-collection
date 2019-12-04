@@ -8,14 +8,14 @@ function Router() {
     return (
         <Switch>
             <Route path="/" exact>
-                <Home />
+                <MusicPlayer />
             </Route>
-            <Route path="/resposive-grid" exact>
+            {/* <Route path="/resposive-grid" exact>
                 <Grid />
             </Route>
             <Route path="/music-player" exact>
                 <MusicPlayer />
-            </Route>
+            </Route> */}
         </Switch>
     )
 

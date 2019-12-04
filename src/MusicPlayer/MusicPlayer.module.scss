@@ -26,31 +26,32 @@ h1.Title {
     padding: 10px;
     position: relative;
     top: 10px;
-    width: 320px;
-    height: 105px;
+    width: 260px;
+    height: 110px;
     font-size: 20px;
-    opacity: 0.5;
+    opacity: 0.7;
     box-shadow: 0px 40px 60px -20px rgba(0,0,0,0.2);
     p {
         margin-bottom: 0;
         text-align: left;
-        font-size: 17px;
+        font-size: 15px;
     }
 }
 
 .MusicPlayerControls {
     display: inline-block;
     position: relative;
-    padding: 10px 10px 10px 144px;
-    width: 350px;
+    padding: 10px;
+    width: 288px;
     background-color: transparent;
     display: flex;
     align-items: center;
     background-color: $white;
+    justify-content: center;
     box-shadow: 0px 40px 60px -20px rgba(0,0,0,0.2);
     span {
         display: inline-block;
-        margin: 10px;
+        margin: 11px 16px;
         &:hover {
             cursor: pointer;
         }
@@ -78,15 +79,15 @@ h1.Title {
     }
 
     .RotateCircle {
-        width: 120px;
-        height: 120px;
+        width: 65px;
+        height: 65px;
         border-radius: 50%;
         display: flex;
         align-items: center;
         animation: musicPlaying 4.5s linear 0s infinite;
         position: absolute;
-        top: -69px;
-        left: 24px;
+        top: -80px;
+        left: 22px;
         overflow: hidden;
         opacity: 0.8;
         img {
@@ -100,18 +101,18 @@ h1.Title {
         }
         span {
             background-color: $light-pink;
-            width: 27px;
-            height: 27px;
+            width: 20px;
+            height: 20px;
             margin: auto;
             border-radius: 50%;
             z-index: 3;
-            border: 8px solid $default-text-color;
+            border: 6px solid $default-text-color;
         }
     }
 }
 .SongDuration, .ProgressBar, .SongInfo > p {
     width: 170px;
-    margin-left: 128px;
+    margin-left: 70px;
 }
 
 .SongDuration {
@@ -140,5 +141,39 @@ h1.Title {
 
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .MusicPlayerControls {
+        width: 350px;
+        padding: 10px 10px 10px 144px;
+        span {
+            margin: 10px;
+        }
+        .RotateCircle {
+            width: 120px;
+            height: 120px;
+            top: -69px;
+            left: 24px;
+            opacity: 0.8;
+            span {
+                width: 25px;
+                height: 25px;
+                border: 8px solid $default-text-color;
+            }
+        }
+    }
+
+    .SongInfo {
+        width: 320px;
+        height: 105px;
+        p {
+            font-size: 17px;
+        }
+    }
+
+    .SongDuration, .ProgressBar, .SongInfo > p {
+        margin-left: 128px;
     }
 }

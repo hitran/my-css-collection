@@ -21,9 +21,9 @@ function Nav() {
                 <span></span>
             </button>
             <ul onClick={toggleNavBar}>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/resposive-grid">Responsive Grid</Link></li>
-                <li><Link to="/music-player">Music Player</Link></li>
+                <li><Link to="/">Music Player</Link></li>
+                {/* <li><Link to="/resposive-grid">Responsive Grid</Link></li>
+                <li><Link to="/music-player">Music Player</Link></li> */}
             </ul>
         </nav>
         </div>

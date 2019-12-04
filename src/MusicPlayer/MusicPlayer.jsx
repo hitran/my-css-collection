@@ -85,7 +85,7 @@ function MusicPlayer() {
         <div className={styles.MusicPlayer}>
             <h1 className="Title">Music Player</h1>
             <p>A simple music player</p>
-            <audio ref={musicAudio} onTimeUpdate={updateTime}>
+            <audio ref={musicAudio} onTimeUpdate={updateTime} preload="auto">
                 <source src={currentSong.src} type="audio/mpeg" />
             </audio>
             <div className={styles.SongInfo}>

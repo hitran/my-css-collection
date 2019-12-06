@@ -4,29 +4,11 @@ import { faPlay, faForward, faBackward, faPause, faVolumeMute, faVolumeUp } from
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import findingHopeAudio from './assets/finding_hope_3AM.mp3';
 import findingHopeImage from './assets/finding_hope.jpg';
-import robinHoodAudio from './assets/RobinHood.mp3';
 
 
 function MusicPlayer() {
-    const songs = [
-        {
-            id: 1,
-            name: 'Finding Hope',
-            artist: '3 AM',
-            duration: '3:22',
-            src: findingHopeAudio
-        },
-        {
-            id: 2,
-            name: 'Robin Hood',
-            artist: 'Anson Seabra',
-            duration: '3:42',
-            src: robinHoodAudio
-        }
-    ];
     const [isPlaying, setPlayingState] = useState(false);
     const [currentTime, setCurrentTime] = useState('0:00');
-    const [currentSong, setCurrentSong] = useState(songs[0]);
     const [isMuted, setMutedState] = useState(false);
     let musicAudio = React.createRef();
     let currentProgress = React.createRef();
@@ -60,22 +42,6 @@ function MusicPlayer() {
         return (`${minute}:${second}`)
     }
 
-    const switchSong = () => {
-        switch (currentSong.id) {
-            case 1:
-                setCurrentSong(songs[1]);
-                break;
-            case 2:
-                setCurrentSong(songs[0]);
-                break;
-            default:
-                setCurrentSong(songs[0]);
-        }
-        currentProgress.current.style.width = 0;
-        musicAudio.current.load();
-        setPlayingState(false);
-    }
-
     const changeVolume = () => {
         setMutedState(!isMuted);
         musicAudio.current.muted = !isMuted;
@@ -86,14 +52,14 @@ function MusicPlayer() {
             <h1 className="Title">Music Player</h1>
             <p>A simple music player</p>
             <audio ref={musicAudio} onTimeUpdate={updateTime}>
-                <source src={currentSong.src} type="audio/mpeg" />
+                <source src={findingHopeAudio} type="audio/mpeg" />
             </audio>
             <div className={styles.SongInfo}>
-                <p><b>{currentSong.name}</b></p>
-                <p>{currentSong.artist}</p>
+                <p><b>Finding Hope</b></p>
+                <p>3AM</p>
                 <div className={styles.SongDuration}>
                     <p>{currentTime}</p>
-                    <p>{currentSong.duration}</p>
+                    <p>3:22</p>
                 </div>
                 <div className={styles.ProgressBar}>
                     <div ref={currentProgress} className={styles.CurrentProgress}></div>
@@ -105,13 +71,13 @@ function MusicPlayer() {
                     <span></span>
                 </div>
                 <span>
-                    <FontAwesomeIcon icon={faBackward} onClick={switchSong} />
+                    <FontAwesomeIcon icon={faBackward}/>
                 </span>
                 <span className={styles.PlayBtn}>
                     <FontAwesomeIcon onClick={handlePlayBtnClick} icon={isPlaying ? faPause : faPlay} />
                 </span>
                 <span>
-                    <FontAwesomeIcon icon={faForward} onClick={switchSong} />
+                    <FontAwesomeIcon icon={faForward} />
                 </span>
                 <span>
                     <FontAwesomeIcon icon={isMuted ? faVolumeMute : faVolumeUp} onClick={changeVolume} />

@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import styles from './MusicPlayer.module.scss';
 import { faPlay, faForward, faBackward, faPause, faVolumeMute, faVolumeUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import findingHopeAudio from './assets/finding_hope_3AM.mp3';
 import findingHopeImage from './assets/finding_hope.jpg';
+import findingHopeAudio from './assets/finding_hope_3AM.mp3';
 
 
 function MusicPlayer() {
@@ -51,20 +51,32 @@ function MusicPlayer() {
         <div className={styles.MusicPlayer}>
             <h1 className="Title">Music Player</h1>
             <p>A simple music player</p>
+
+            {/* hidden audio source */}
             <audio ref={musicAudio} onTimeUpdate={updateTime}>
-                <source src={findingHopeAudio} type="audio/mpeg" />
+                <source src={findingHopeAudio} type="audio/mp3" />
             </audio>
+
+            {/* styling audio */}
+
             <div className={styles.SongInfo}>
                 <p><b>Finding Hope</b></p>
                 <p>3AM</p>
+                
+                {/* display song duration and current time */}
                 <div className={styles.SongDuration}>
                     <p>{currentTime}</p>
                     <p>3:22</p>
                 </div>
+
+                {/* progress bar */}
                 <div className={styles.ProgressBar}>
                     <div ref={currentProgress} className={styles.CurrentProgress}></div>
                 </div>
+
             </div>
+
+            {/* player controls: play, pause, mute,.. */}
             <div className={styles.MusicPlayerControls}>
                 <div className={styles.RotateCircle}>
                     <img src={findingHopeImage} alt="poster" />
@@ -83,6 +95,7 @@ function MusicPlayer() {
                     <FontAwesomeIcon icon={isMuted ? faVolumeMute : faVolumeUp} onClick={changeVolume} />
                 </span>
             </div>
+            {/* end player controls */}
         </div>
     )
 }

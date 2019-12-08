@@ -2,7 +2,7 @@
 
 .GridWrapper {
     padding: 10px;
-    height: 500px;
+    height: 400px;
     overflow: hidden;
     > div:first-child {
         display: flex;
@@ -23,7 +23,7 @@
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(2, 1.5fr);
-    min-height: 700px;
+    min-height: 500px;
 }
 
 .Box {
@@ -63,6 +63,7 @@
     .Grid {
         grid-gap: 15px;
         grid-template-columns: repeat(5, 1fr);
+        min-height: 700px;
     }
     .Box {
         @for $i from 1 through 30 {

@@ -2,6 +2,7 @@
 .App {
   display: flex;
   color: $default-text-color;
+  font-family: 'Roboto', sans-serif;
 }
 
 * {
@@ -9,11 +10,10 @@
 }
 
 h1.Title {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
   letter-spacing: 1px;
 }
-
 
 @media screen and (min-width: 500px) {
   h1.Title {

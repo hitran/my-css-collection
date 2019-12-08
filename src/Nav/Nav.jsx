@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import styles from './Nav.module.scss';
 
 function Nav() {
@@ -7,6 +7,10 @@ function Nav() {
     const toggleNavBar = e => {
         setNavBarState(!isNavBarOpened);
     }
+
+    const active = {
+        color: '#DB504A'
+    };
 
     return(
         <div>
@@ -21,9 +25,8 @@ function Nav() {
                 <span></span>
             </button>
             <ul onClick={toggleNavBar}>
-                <li><Link to="/">Music Player</Link></li>
-                {/* <li><Link to="/resposive-grid">Responsive Grid</Link></li>
-                <li><Link to="/music-player">Music Player</Link></li> */}
+                <li><NavLink to="/" activeStyle={active} exact>Music Player</NavLink></li>
+                <li><NavLink to="/pinterest-grid" activeStyle={active} exact>Pinterest Grid</NavLink></li>
             </ul>
         </nav>
         </div>

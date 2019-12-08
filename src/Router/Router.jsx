@@ -1,7 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Home from '../Home/Home';
-import Grid from '../Grid/Grid';
+import PinterestGrid from '../PinterestGrid/PinterestGrid';
 import MusicPlayer from '../MusicPlayer/MusicPlayer';
 
 function Router() {
@@ -10,12 +9,9 @@ function Router() {
             <Route path="/" exact>
                 <MusicPlayer />
             </Route>
-            {/* <Route path="/resposive-grid" exact>
-                <Grid />
+            <Route path="/pinterest-grid" exact>
+                <PinterestGrid />
             </Route>
-            <Route path="/music-player" exact>
-                <MusicPlayer />
-            </Route> */}
         </Switch>
     )
 

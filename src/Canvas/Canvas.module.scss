@@ -7,6 +7,7 @@
     background-color: $default-background-color;
     display: flex;
     align-items: center;
+    box-sizing: border-box;
 }
 
 
@@ -17,8 +18,8 @@
     padding: 0;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 700px) {
     .Wrapper {
-        padding: 50px 100px;
+        padding: 0 10%;
     }
 }

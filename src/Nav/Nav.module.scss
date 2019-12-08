@@ -69,7 +69,7 @@
 
 .NavBar ul li {
     border-bottom: 1px solid $default-border-color;
-    padding: 5px 0 5px 20px;
+    padding: 15px 0 15px 20px;
     transition: 0.3 ease-in-out;
     &:hover {
         background-color: $default-text-color;
@@ -77,11 +77,10 @@
         a {
             color: $default-background-color;
         }
-        
     }
 }
 
-.NavBar ul li a {
+.NavBar a {
     display: inline-block;
     width: 100%;
     text-decoration: none;
@@ -92,5 +91,8 @@
     .NavBar {
         width: 250px;
         transition: 0.5s ease-in-out;
+    }
+    .NavBar ul li {
+        padding: 5px 0 5px 20px;
     }
 }

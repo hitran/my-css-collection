@@ -2,7 +2,7 @@
 
 .GridWrapper {
     padding: 10px;
-    height: 400px;
+    height: 480px;
     overflow: hidden;
     > div:first-child {
         display: flex;
@@ -21,9 +21,9 @@
 
 .Grid {
     display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(2, 1.5fr);
-    min-height: 500px;
+    grid-gap: 5px;
+    grid-template-columns: repeat(3, 1.5fr);
+    min-height: 600px;
 }
 
 .Box {
@@ -34,7 +34,7 @@
 
     @for $i from 1 through 30 {
         &:nth-child(#{$i}) {
-            background-image: url(http://www.fillmurray.com/130/#{ 300 + ( $i * 2 ) });
+            background-image: url(http://www.fillmurray.com/130/#{ 300 + ( $i ) });
             background-size: cover;
             background-position: center;
         }
@@ -46,27 +46,38 @@
         &:nth-child(#{$i*2+1}) {
             background-color: $bright-red;
             grid-row: span 4;
+            
         }
         &:nth-child(#{$i*2}) {
-            background-color: $dark-pink;
+            background-color: $bright-green;
             grid-row: span 3;
+            
         }
     }
       
 }
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 450px) {
+    .Grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media screen and (min-width: 800px) {
     .GridWrapper {
         padding: 20px;
         height: 600px;
     }
     .Grid {
-        grid-gap: 15px;
-        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 10px;
+        grid-template-columns: repeat(6, 1fr);
         min-height: 700px;
     }
     .Box {
         @for $i from 1 through 30 {
+            &:nth-child(#{$i}) {
+                background-image: url(http://www.fillmurray.com/130/#{ 300 + ( $i * 3 ) });
+            }
             &:nth-child(#{$i*2 + 3}) {
                 display: block;
             }

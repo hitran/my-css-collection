@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styles from './AlgorithmVisualizer.module.scss';
+import styles from './SortingVisualizer.module.scss';
 import { getMergeSortAnimations } from './mergeSort/mergeSort';
 
 export default function AlgorithmVisualizer() {
@@ -28,7 +28,7 @@ export default function AlgorithmVisualizer() {
     }
 
     const mergeSortAnimations = () => {
-        
+
         setIsButtonDisabled(true);
         setIsArraySorted(false);
 
@@ -75,8 +75,8 @@ export default function AlgorithmVisualizer() {
             <h1 className="Title">Sorting Visualizer</h1>
             <div className={styles.HiddenOnMobile}>
                 <p className={styles.SuccessMsg}>{isArraySorted ? "This array is sorted!" :"" }</p>
-                <p className={styles.SuccessMsg}>{isButtonDisabled ? "Sorting..." : ""}</p>
-                <p className={styles.SuccessMsg}>{!isButtonDisabled && !isArraySorted ? "Click merge sort button to start sorting this array" : ""}</p>
+                <p>{isButtonDisabled ? "Sorting..." : ""}</p>
+                <p>{!isButtonDisabled && !isArraySorted ? "Click merge sort button to start sorting this array" : ""}</p>
                 <div>
                     <div ref={barWrapper} className={styles.BarWrapper}>{bars}</div>
                     <div className={styles.Settings}>

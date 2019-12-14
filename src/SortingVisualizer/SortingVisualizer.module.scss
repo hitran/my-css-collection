@@ -12,8 +12,10 @@
     p {
         margin-bottom: 5px;
     }
+    h1, p {
+        text-align: center;
+    }
 }
-
 .HiddenOnMobile {
     display: none;
 }

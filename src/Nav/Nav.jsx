@@ -27,6 +27,7 @@ function Nav() {
             <ul onClick={toggleNavBar}>
                 <li><NavLink to="/" activeStyle={active} exact>Music Player</NavLink></li>
                 <li><NavLink to="/pinterest-grid" activeStyle={active} exact>Pinterest Grid</NavLink></li>
+                <li><NavLink to="/algorithm-visualizer" activeStyle={active} exact>Algorithm Visualizer</NavLink></li>
             </ul>
         </nav>
         </div>

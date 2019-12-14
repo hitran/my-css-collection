@@ -1,0 +1,22 @@
+.VisualizerWrapper div {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.Bar {
+    width: 4px;
+    margin: 0 3px;
+}
+
+.BarWrapper {
+    padding: 20px;
+}
+
+.Settings {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+    button {
+        margin: 0 10px;
+    }
+}

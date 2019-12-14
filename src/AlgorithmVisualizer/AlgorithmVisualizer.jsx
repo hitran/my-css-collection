@@ -5,26 +5,33 @@ import { getMergeSortAnimations } from './mergeSort/mergeSort';
 export default function AlgorithmVisualizer() {
     const [randomValues, setRandomValues] = useState([]);
     const [bars, setBars] = useState([]);
+    const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+    const [isArraySorted, setIsArraySorted] = useState(false);
+
     const barWrapper = React.createRef();
-    
-    
+
     const PRIMARY_COLOR = "turquoise";
     const SECONDARY_COLOR = "red";
-    const ANIMATION_SPEED_MS = 20;
+    const ANIMATION_SPEED_MS = 10;
 
 
     const resetArray = () => {
         let tempValues = [];
-        for (let i = 0; i < 80; i++) {
+        for (let i = 0; i < 150; i++) {
             tempValues.push(Math.floor(Math.random() * 500));
         }
         setRandomValues(tempValues);
         const newBars = tempValues.map(value => <div className={styles.Bar} style={{ height: `${value}px`, backgroundColor: `${PRIMARY_COLOR}` }}></div>);
         setBars(newBars);
+        setIsButtonDisabled(false);
+        setIsArraySorted(false);
     }
 
     const mergeSortAnimations = () => {
-        if (randomValues.length <= 1) return;
+        
+        setIsButtonDisabled(true);
+        setIsArraySorted(false);
+
         const animations = getMergeSortAnimations(randomValues);
         for (let i = 0; i < animations.length; i++) {
             const arrayBars = barWrapper.current.childNodes;
@@ -46,26 +53,42 @@ export default function AlgorithmVisualizer() {
                 }, i * ANIMATION_SPEED_MS);
             }
         }
+
+        // calculate total time needed for the animation to finish
+        const totalTime = animations.length * ANIMATION_SPEED_MS
+        setTimeout(() => { setIsButtonDisabled(false) }, totalTime + 5);
+        setTimeout(() => { setIsArraySorted(true) }, totalTime + 5);
     }
 
-    const selectionSortAnimations = () => {}
-    const insertionSortAnimations = () => {}
-    const bubbleSortAnimations = () => {}
+    // const selectionSortAnimations = () => { }
+    // const insertionSortAnimations = () => { }
+    // const bubbleSortAnimations = () => { }
 
-    useEffect(() => { resetArray()}, [])
+    useEffect(() => {
+        resetArray();
+    }, [])
 
-    
+
 
     return (
         <div className={styles.VisualizerWrapper}>
-            <div ref={barWrapper} className={styles.BarWrapper}>{bars}</div>
-            <div className={styles.Settings}>
-                <button onClick={resetArray}>Reset Array</button>
-                <button onClick={mergeSortAnimations}>Merge Sort</button>
-                {/* <button onClick={selectionSortAnimations}>Selection Sort</button>
-                <button onClick={insertionSortAnimations}>Insertion Sort</button>
-                <button onClick={bubbleSortAnimations}>Bubble Sort</button> */}
+            <h1 className="Title">Sorting Visualizer</h1>
+            <div className={styles.HiddenOnMobile}>
+                <p className={styles.SuccessMsg}>{isArraySorted ? "This array is sorted!" :"" }</p>
+                <p className={styles.SuccessMsg}>{isButtonDisabled ? "Sorting..." : ""}</p>
+                <p className={styles.SuccessMsg}>{!isButtonDisabled && !isArraySorted ? "Click merge sort button to start sorting this array" : ""}</p>
+                <div>
+                    <div ref={barWrapper} className={styles.BarWrapper}>{bars}</div>
+                    <div className={styles.Settings}>
+                        <button disabled={isButtonDisabled} onClick={resetArray}>Reset Array</button>
+                        <button disabled={isButtonDisabled} onClick={mergeSortAnimations}>Merge Sort</button>
+                        {/* <button onClick={selectionSortAnimations}>Selection Sort</button>
+                        <button onClick={insertionSortAnimations}>Insertion Sort</button>
+                        <button onClick={bubbleSortAnimations}>Bubble Sort</button> */}
+                    </div>
+                </div>
             </div>
+            <div className={styles.HiddenOnDesktop}>Unfortunately, devices are not supported by this project! :( </div>
         </div>
     )
 }

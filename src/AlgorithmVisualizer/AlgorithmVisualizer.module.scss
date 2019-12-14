@@ -1,22 +1,81 @@
-.VisualizerWrapper div {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
+@import '../common-modules/color.scss';
+
+.VisualizerWrapper {
+    overflow-X: hidden;
+    background-color: $white;
+    padding: 10px;
+    box-sizing: content-box;
+    > div > div {
+        display: flex;  
+        justify-content: space-between; 
+    }
+    p {
+        margin-bottom: 5px;
+    }
 }
+
+.HiddenOnMobile {
+    display: none;
+}
+
 .Bar {
-    width: 4px;
-    margin: 0 3px;
+    width: 2px;
+    margin: 0 1px;
 }
 
 .BarWrapper {
-    padding: 20px;
+    height: 550px;
+    min-width: 600px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-wrap: no-wrap;
 }
 
 .Settings {
     display: flex;
-    justify-content: center;
-    margin: 15px;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 0 0 0 10px;
+    min-width: 100px;
     button {
-        margin: 0 10px;
+        margin: 0 0 10px 0;
+        background-color: white;
+        border-radius: 5px;
+        color: $default-text-color;
+        padding: 5px;
+        width: 100%;
+        &:focus {
+            outline: none;
+        }
+        &:disabled {
+            opacity: 0.8;
+            cursor: no-drop;
+            background-color: $light-gray;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .VisualizerWrapper {
+        padding: 3%;
+       // min-width: 850px;
+    }
+    .HiddenOnMobile {
+        display: block;
+    }
+
+    .HiddenOnDesktop {
+        display: none;
+    }
+}
+
+.SuccessMsg {
+    color: green;
+}
+
+@media screen and (min-width: 850px) {
+    .VisualizerWrapper {
+        padding: 2% 4.5%;
     }
 }

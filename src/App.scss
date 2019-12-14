@@ -15,8 +15,18 @@ h1.Title {
   letter-spacing: 1px;
 }
 
+.MainContentWrapper {
+  box-shadow: 0px 40px 60px -20px rgba(0,0,0,0.2);
+  background-color: $white;
+  width: 100%;
+}
+
 @media screen and (min-width: 500px) {
   h1.Title {
     font-size: 30px;
+  }
+
+  .MainContentWrapper {
+    margin: 0 10%;
   }
 }

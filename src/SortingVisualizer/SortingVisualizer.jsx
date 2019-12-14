@@ -88,7 +88,7 @@ export default function AlgorithmVisualizer() {
                     </div>
                 </div>
             </div>
-            <div className={styles.HiddenOnDesktop}>Unfortunately, devices are not supported by this project! :( </div>
+            <div className={styles.HiddenOnDesktop}>Unfortunately, mobile devices are not supported by this project! :( </div>
         </div>
     )
 }

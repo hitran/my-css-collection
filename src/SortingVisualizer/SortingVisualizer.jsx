@@ -77,14 +77,8 @@ export default function AlgorithmVisualizer() {
     }
 
     const bubbleSortAnimations = () => {
-        const testArr = [...randomValues];
         const animations = getBubbleSortAnimations(randomValues);
         makeSortingAnimations(animations);
-        testArr.sort((a,b)=>a-b);
-        console.log(testArr);
-        console.log(randomValues);
-        console.log(JSON.stringify(testArr) === JSON.stringify(randomValues));
-
     }
 
     useEffect(() => {
@@ -97,7 +91,7 @@ export default function AlgorithmVisualizer() {
             <div className={styles.HiddenOnMobile}>
                 <p className={styles.SuccessMsg}>{isArraySorted ? "This array is sorted!" : ""}</p>
                 <p>{isButtonDisabled ? "Sorting..." : ""}</p>
-                <p>{!isButtonDisabled && !isArraySorted ? "Click merge sort button to start sorting this array" : ""}</p>
+                <p>{!isButtonDisabled && !isArraySorted ? "Click one of the sort buttons to start sorting this array" : ""}</p>
                 <div>
                     <div ref={barWrapper} className={styles.BarWrapper}>{bars}</div>
                     <div className={styles.Settings}>
@@ -105,7 +99,6 @@ export default function AlgorithmVisualizer() {
                         <button disabled={isButtonDisabled} onClick={mergeSortAnimations}>Merge Sort</button>
                         <button disabled={isButtonDisabled} onClick={insertionSortAnimations}>Insertion Sort</button>
                         <button disabled={isButtonDisabled} onClick={bubbleSortAnimations}>Bubble Sort</button>
-                        {/* <button onClick={selectionSortAnimations}>Selection Sort</button>*/}
                     </div>
                 </div>
             </div>

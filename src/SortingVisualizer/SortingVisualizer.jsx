@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styles from './SortingVisualizer.module.scss';
-import { getMergeSortAnimations } from './mergeSort/mergeSort';
+import { getMergeSortAnimations } from './sortingAlgorithm/mergeSort';
+import { getInsertionSortAnimations } from './sortingAlgorithm/insertionSort';
+import { getBubbleSortAnimations } from './sortingAlgorithm/bubbleSort';
 
 export default function AlgorithmVisualizer() {
     const [randomValues, setRandomValues] = useState([]);
@@ -12,7 +14,7 @@ export default function AlgorithmVisualizer() {
 
     const PRIMARY_COLOR = "turquoise";
     const SECONDARY_COLOR = "red";
-    const ANIMATION_SPEED_MS = 10;
+    const ANIMATION_SPEED_MS = 2;
 
 
     const resetArray = () => {
@@ -27,12 +29,9 @@ export default function AlgorithmVisualizer() {
         setIsArraySorted(false);
     }
 
-    const mergeSortAnimations = () => {
-
+    const makeSortingAnimations = (animations) => {
         setIsButtonDisabled(true);
         setIsArraySorted(false);
-
-        const animations = getMergeSortAnimations(randomValues);
         for (let i = 0; i < animations.length; i++) {
             const arrayBars = barWrapper.current.childNodes;
             const isColorChange = i % 3 !== 2;
@@ -47,34 +46,56 @@ export default function AlgorithmVisualizer() {
                 }, i * ANIMATION_SPEED_MS);
             } else {
                 setTimeout(() => {
-                    const [barOneIdx, newHeight] = animations[i];
-                    const barOneStyle = arrayBars[barOneIdx].style;
-                    barOneStyle.height = `${newHeight}px`;
+                    if (animations[i].length === 2) {
+                        const [barOneIdx, newHeight] = animations[i];
+                        const barOneStyle = arrayBars[barOneIdx].style;
+                        barOneStyle.height = `${newHeight}px`;
+                    } else if (animations[i].length === 4) {
+                        const [barOneIdx, newBarOneHeight, barTwoIdx, newBarTwoHeight] = animations[i];
+                        const barOneStyle = arrayBars[barOneIdx].style;
+                        const barTwoStyle = arrayBars[barTwoIdx].style;
+                        barOneStyle.height = `${newBarOneHeight}px`;
+                        barTwoStyle.height = `${newBarTwoHeight}px`;
+                    }
+
                 }, i * ANIMATION_SPEED_MS);
             }
         }
-
         // calculate total time needed for the animation to finish
         const totalTime = animations.length * ANIMATION_SPEED_MS
         setTimeout(() => { setIsButtonDisabled(false) }, totalTime + 5);
         setTimeout(() => { setIsArraySorted(true) }, totalTime + 5);
     }
+    const mergeSortAnimations = () => {
+        const animations = getMergeSortAnimations(randomValues);
+        makeSortingAnimations(animations);
+    }
 
-    // const selectionSortAnimations = () => { }
-    // const insertionSortAnimations = () => { }
-    // const bubbleSortAnimations = () => { }
+    const insertionSortAnimations = () => {
+        const animations = getInsertionSortAnimations(randomValues);
+        makeSortingAnimations(animations);
+    }
+
+    const bubbleSortAnimations = () => {
+        const testArr = [...randomValues];
+        const animations = getBubbleSortAnimations(randomValues);
+        makeSortingAnimations(animations);
+        testArr.sort((a,b)=>a-b);
+        console.log(testArr);
+        console.log(randomValues);
+        console.log(JSON.stringify(testArr) === JSON.stringify(randomValues));
+
+    }
 
     useEffect(() => {
         resetArray();
     }, [])
 
-
-
     return (
         <div className={styles.VisualizerWrapper}>
             <h1 className="Title">Sorting Visualizer</h1>
             <div className={styles.HiddenOnMobile}>
-                <p className={styles.SuccessMsg}>{isArraySorted ? "This array is sorted!" :"" }</p>
+                <p className={styles.SuccessMsg}>{isArraySorted ? "This array is sorted!" : ""}</p>
                 <p>{isButtonDisabled ? "Sorting..." : ""}</p>
                 <p>{!isButtonDisabled && !isArraySorted ? "Click merge sort button to start sorting this array" : ""}</p>
                 <div>
@@ -82,9 +103,9 @@ export default function AlgorithmVisualizer() {
                     <div className={styles.Settings}>
                         <button disabled={isButtonDisabled} onClick={resetArray}>Reset Array</button>
                         <button disabled={isButtonDisabled} onClick={mergeSortAnimations}>Merge Sort</button>
-                        {/* <button onClick={selectionSortAnimations}>Selection Sort</button>
-                        <button onClick={insertionSortAnimations}>Insertion Sort</button>
-                        <button onClick={bubbleSortAnimations}>Bubble Sort</button> */}
+                        <button disabled={isButtonDisabled} onClick={insertionSortAnimations}>Insertion Sort</button>
+                        <button disabled={isButtonDisabled} onClick={bubbleSortAnimations}>Bubble Sort</button>
+                        {/* <button onClick={selectionSortAnimations}>Selection Sort</button>*/}
                     </div>
                 </div>
             </div>

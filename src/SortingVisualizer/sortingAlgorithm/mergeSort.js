@@ -10,6 +10,8 @@ const merge = (mainArray, startIdx, middleIdx, endIdx, auxiliaryArray, animation
     let k = startIdx;
     let i = startIdx;
     let j = middleIdx + 1;
+
+    // compare and re-order array values
     while (i <= middleIdx && j <= endIdx) {
         animations.push([i, j]);
         animations.push([i, j]);

@@ -28,6 +28,7 @@ function Nav() {
                 <li><NavLink to="/" activeStyle={active} exact>Music Player</NavLink></li>
                 <li><NavLink to="/pinterest-grid" activeStyle={active} exact>Pinterest Grid</NavLink></li>
                 <li><NavLink to="/sorting-visualizer" activeStyle={active} exact>Sorting Visualizer</NavLink></li>
+                <li><NavLink to="/progress-bars" activeStyle={active} exact>Progress Bars</NavLink></li>
             </ul>
         </nav>
         </div>

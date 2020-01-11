@@ -9,14 +9,14 @@ export default function AlgorithmVisualizer() {
     const [bars, setBars] = useState([]);
     const [isButtonDisabled, setIsButtonDisabled] = useState(false);
     const [isArraySorted, setIsArraySorted] = useState(false);
-
+    
     const barWrapper = React.createRef();
 
     const PRIMARY_COLOR = "turquoise";
     const SECONDARY_COLOR = "red";
     const ANIMATION_SPEED_MS = 2;
 
-
+    // reset array
     const resetArray = () => {
         let tempValues = [];
         for (let i = 0; i < 150; i++) {
@@ -29,6 +29,7 @@ export default function AlgorithmVisualizer() {
         setIsArraySorted(false);
     }
 
+    // create animation
     const makeSortingAnimations = (animations) => {
         setIsButtonDisabled(true);
         setIsArraySorted(false);
@@ -61,11 +62,13 @@ export default function AlgorithmVisualizer() {
                 }, i * ANIMATION_SPEED_MS);
             }
         }
+
         // calculate total time needed for the animation to finish
         const totalTime = animations.length * ANIMATION_SPEED_MS
         setTimeout(() => { setIsButtonDisabled(false) }, totalTime + 5);
         setTimeout(() => { setIsArraySorted(true) }, totalTime + 5);
     }
+
     const mergeSortAnimations = () => {
         const animations = getMergeSortAnimations(randomValues);
         makeSortingAnimations(animations);

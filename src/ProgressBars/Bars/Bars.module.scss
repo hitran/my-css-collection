@@ -1,0 +1,23 @@
+.BarWrapper {
+    width: 290px;
+    height: 35px;
+    margin: 10px 0;
+    color: black;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: transparent;
+    overflow: hidden;
+    span {
+        z-index: 1;
+    }
+}
+
+.Bar {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}

@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import PinterestGrid from '../PinterestGrid/PinterestGrid';
 import MusicPlayer from '../MusicPlayer/MusicPlayer';
 import SortingVisualizer from '../SortingVisualizer/SortingVisualizer';
+import ProgressBars from '../ProgressBars/ProgressBars';
 
 function Router() {
     return (
@@ -10,11 +11,14 @@ function Router() {
             <Route path="/" exact>
                 <MusicPlayer />
             </Route>
-            <Route path="/pinterest-grid" exact>
+            <Route path="/pinterest-grid">
                 <PinterestGrid />
             </Route>
-            <Route path="/sorting-visualizer" exact>
+            <Route path="/sorting-visualizer">
                 <SortingVisualizer />
+            </Route>
+            <Route path="/progress-bars">
+                <ProgressBars />
             </Route>
         </Switch>
     )

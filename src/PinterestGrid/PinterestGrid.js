@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function Grid() {
     const boxes = [];
     for (let i = 0; i < 16; i++) {
-        boxes.push(<div className={styles.Box}></div>)
+        boxes.push(<div key={i+1} className={styles.Box}></div>)
     }
     return (
         <div className="MainContentWrapper">

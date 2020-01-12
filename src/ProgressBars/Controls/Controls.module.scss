@@ -1,10 +1,19 @@
 @import '../../common-modules/color';
 .ControlsWrapper {
+    width: 290px;
     .ButtonWrapper, select {
         margin: auto;
     }
+
+    .ButtonWrapper {
+        display: flex;
+        justify-content: space-between;
+        margin: 5px 0;
+        flex-wrap: wrap;
+    }
+
     select, button {
-        margin: 5px;
+        margin: 5px 0;
         color: $default-text-color;
         background-color: $white;
         border: 1px solid $default-text-color;
@@ -12,12 +21,13 @@
 
     select {
         padding: 10px;
-        height: 30px;
-        width: 200px
+        height: 35px;
+        width: 100%;
+        margin: 0;
+        outline: none;
     }
 
     button {
-        margin: 10px 5px;
         background-color: $white;
         border-radius: 5px;
         padding: 5px;
@@ -33,13 +43,14 @@
         }
         &:hover {
             cursor: pointer;
+            background-color: $bright-red;
+            color: $white;
         }
     }
 }
 
 @media screen and(min-width: 768px) {
     .ControlsWrapper {
-        width: 290px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -47,7 +58,6 @@
             display: flex;
             flex-wrap: wrap;
             width: 100%;
-            justify-content: center;
             button {
                 width: 20%;
             }

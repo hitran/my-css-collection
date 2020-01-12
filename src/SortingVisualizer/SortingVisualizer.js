@@ -18,12 +18,15 @@ export default function AlgorithmVisualizer() {
 
     // reset array
     const resetArray = () => {
+        // create an array of random numbers to be sorted
         let tempValues = [];
         for (let i = 0; i < 150; i++) {
             tempValues.push(Math.floor(Math.random() * 500));
         }
         setRandomValues(tempValues);
-        const newBars = tempValues.map(value => <div className={styles.Bar} style={{ height: `${value}px`, backgroundColor: `${PRIMARY_COLOR}` }}></div>);
+
+        // create bars based on newly generated random numbers
+        const newBars = tempValues.map((value, index) => <div key={index} className={styles.Bar} style={{ height: `${value}px`, backgroundColor: `${PRIMARY_COLOR}` }}></div>);
         setBars(newBars);
         setIsButtonDisabled(false);
         setIsArraySorted(false);
@@ -92,11 +95,15 @@ export default function AlgorithmVisualizer() {
         <div className={styles.VisualizerWrapper}>
             <h1 className="Title">Sorting Visualizer</h1>
             <div className={styles.HiddenOnMobile}>
+                {}
                 <p className={styles.SuccessMsg}>{isArraySorted ? "This array is sorted!" : ""}</p>
                 <p>{isButtonDisabled ? "Sorting..." : ""}</p>
                 <p>{!isButtonDisabled && !isArraySorted ? "Click one of the sort buttons to start sorting this array" : ""}</p>
                 <div>
+                    {/* bars */}
                     <div ref={barWrapper} className={styles.BarWrapper}>{bars}</div>
+
+                    {/* control buttons */}
                     <div className={styles.Settings}>
                         <button disabled={isButtonDisabled} onClick={resetArray}>Reset Array</button>
                         <button disabled={isButtonDisabled} onClick={mergeSortAnimations}>Merge Sort</button>
@@ -105,6 +112,8 @@ export default function AlgorithmVisualizer() {
                     </div>
                 </div>
             </div>
+
+            {/* error message displayed when device's screen is not supported */}
             <div className={styles.HiddenOnDesktop}>Unfortunately, mobile devices are not supported by this project! :( </div>
         </div>
     )

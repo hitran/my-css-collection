@@ -35,7 +35,6 @@ function ProgressBars() {
         values[selectedBar] + value > 0 ? values[selectedBar] += parseInt(value, 10) : values[selectedBar] = 0
         setBarValues(values);
     }
-    
 
     return(
         <div className ={styles.ProgressBarsWrapper}>

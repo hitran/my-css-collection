@@ -1,0 +1,88 @@
+.ControlsWrapper {
+  width: 290px;
+}
+
+.ControlsWrapper .ButtonWrapper, .ControlsWrapper select {
+  margin: auto;
+}
+
+.ControlsWrapper .ButtonWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 5px 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.ControlsWrapper select, .ControlsWrapper button {
+  margin: 5px 0;
+  color: #444444;
+  background-color: #fff;
+  border: 1px solid #444444;
+}
+
+.ControlsWrapper select {
+  padding: 10px;
+  height: 35px;
+  width: 100%;
+  margin: 0;
+  outline: none;
+}
+
+.ControlsWrapper button {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 5px;
+  width: 45%;
+  border-color: #444444;
+}
+
+.ControlsWrapper button:focus {
+  outline: none;
+}
+
+.ControlsWrapper button:disabled {
+  opacity: 0.8;
+  cursor: no-drop;
+  background-color: #D3D3D3;
+}
+
+.ControlsWrapper button:hover {
+  cursor: pointer;
+  background-color: #DB504A;
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .ControlsWrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .ControlsWrapper .ButtonWrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 100%;
+  }
+  .ControlsWrapper .ButtonWrapper button {
+    width: 20%;
+  }
+  .ControlsWrapper select {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=Controls.module.css.map */

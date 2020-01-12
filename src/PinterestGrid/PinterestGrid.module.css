@@ -1,0 +1,902 @@
+.GridWrapper {
+  padding: 10px;
+  height: 480px;
+  overflow: hidden;
+}
+
+.GridWrapper > div:first-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.GridWrapper > div:first-child h1 {
+  display: inline-block;
+  margin-left: 15px;
+  margin-bottom: 0;
+}
+
+.GridWrapper > div:first-child svg {
+  width: 25px !important;
+  height: 25px;
+}
+
+.Grid {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 5px;
+  -ms-grid-columns: (1.5fr)[3];
+      grid-template-columns: repeat(3, 1.5fr);
+  min-height: 600px;
+}
+
+.Box {
+  color: #eee;
+  font-weight: bold;
+  opacity: 0.7;
+  border-radius: 10px;
+}
+
+.Box:nth-child(1) {
+  background-image: url(http://www.fillmurray.com/130/301);
+  background-size: cover;
+  background-position: center;
+}
+
+.Box:nth-child(5) {
+  background-color: #157A6E;
+  grid-row: span 5;
+  display: none;
+}
+
+.Box:nth-child(3) {
+  background-color: #DB504A;
+  grid-row: span 4;
+}
+
+.Box:nth-child(2) {
+  background-color: #157A6E;
+  grid-row: span 3;
+}
+
+.Box:nth-child(2) {
+  background-image: url(http://www.fillmurray.com/130/302);
+  background-size: cover;
+  background-position: center;
+}
+
+.Box:nth-child(7) {
+  background-color: #157A6E;
+  grid-row: span 5;
+  display: none;
+}
+
+.Box:nth-child(5) {
+  background-color: #DB504A;
+  grid-row: span 4;
+}
+
+.Box:nth-child(4) {
+  background-color: #157A6E;
+  grid-row: span 3;
+}
+
+.Box:nth-child(3) {
+  background-image: url(http://www.fillmurray.com/130/303);
+  background-size: cover;
+  background-position: center;
+}
+
+.Box:nth-child(9) {
+  background-color: #157A6E;
+  grid-row: span 5;
+  display: none;
+}
+
+.Box:nth-child(7) {
+  background-color: #DB504A;
+  grid-row: span 4;
+}
+
+.Box:nth-child(6) {
+  background-color: #157A6E;
+  grid-row: span 3;
+}
+
+.Box:nth-child(4) {
+  background-image: url(http://www.fillmurray.com/130/304);
+  background-size: cover;
+  background-position: center;
+}
+
+.Box:nth-child(11) {
+  background-color: #157A6E;
+  grid-row: span 5;
+  display: none;
+}
+
+.Box:nth-child(9) {
+  background-color: #DB504A;
+  grid-row: span 4;
+}
+
+.Box:nth-child(8) {
+  background-color: #157A6E;
+  grid-row: span 3;
+}
+
+.Box:nth-child(5) {
+  background-image: url(http://www.fillmurray.com/130/305);
+  background-size: cover;
+  background-position: center;
+}
+
+.Box:nth-child(13) {
+  background-color: #157A6E;
+  grid-row: span 5;
+  display: none;
+}
+
+.Box:nth-child(11) {
+  background-color: #DB504A;
+  grid-row: span 4;
+}
+
+.Box:nth-child(10) {
+  background-color: #157A6E;
+  grid-row: span 3;
+}
+
+.Box:nth-child(6) {
+  background-image: url(http://www.fillmurray.com/130/306);
+  background-size: cover;
+  background-position: center;
+}
+
+.Box:nth-child(15) {
+  background-color: #157A6E;
+  grid-row: span 5;
+  display: none;
+}
+
+.Box:nth-child(13) {
+  background-color: #DB504A;
+  grid-row: span 4;
+}
+
+.Box:nth-child(12) {
+  background-color: #157A6E;
+  grid-row: span 3;
+}
+
+.Box:nth-child(7) {
+  background-image: url(http://www.fillmurray.com/130/307);
+  background-size: cover;
+  background-position: center;
+}
+
+.Box:nth-child(17) {
+  background-color: #157A6E;
+  grid-row: span 5;
+  display: none;
+}
+
+.Box:nth-child(15) {
+  background-color: #DB504A;
+  grid-row: span 4;
+}
+
+.Box:nth-child(14) {
+  background-color: #157A6E;
+  grid-row: span 3;
+}
+
+.Box:nth-child(8) {
+  background-image: url(http://www.fillmurray.com/130/308);
+  background-size: cover;
+  background-position: center;
+}
+
+.Box:nth-child(19) {
+  background-color: #157A6E;
+  grid-row: span 5;
+  display: none;
+}
+
+.Box:nth-child(17) {
+  background-color: #DB504A;
+  grid-row: span 4;
+}
+
+.Box:nth-child(16) {
+  background-color: #157A6E;
+  grid-row: span 3;
+}
+
+.Box:nth-child(9) {
+  background-image: url(http://www.fillmurray.com/130/309);
+  background-size: cover;
+  background-position: center;
+}
+
+.Box:nth-child(21) {
+  background-color: #157A6E;
+  grid-row: span 5;
+  display: none;
+}
+
+.Box:nth-child(19) {
+  background-color: #DB504A;
+  grid-row: span 4;
+}
+
+.Box:nth-child(18) {
+  background-color: #157A6E;
+  grid-row: span 3;
+}
+
+.Box:nth-child(10) {
+  background-image: url(http://www.fillmurray.com/130/310);
+  background-size: cover;
+  background-position: center;
+}
+
+.Box:nth-child(23) {
+  background-color: #157A6E;
+  grid-row: span 5;
+  display: none;
+}
+
+.Box:nth-child(21) {
+  background-color: #DB504A;
+  grid-row: span 4;
+}
+
+.Box:nth-child(20) {
+  background-color: #157A6E;
+  grid-row: span 3;
+}
+
+.Box:nth-child(11) {
+  background-image: url(http://www.fillmurray.com/130/311);
+  background-size: cover;
+  background-position: center;
+}
+
+.Box:nth-child(25) {
+  background-color: #157A6E;
+  grid-row: span 5;
+  display: none;
+}
+
+.Box:nth-child(23) {
+  background-color: #DB504A;
+  grid-row: span 4;
+}
+
+.Box:nth-child(22) {
+  background-color: #157A6E;
+  grid-row: span 3;
+}
+
+.Box:nth-child(12) {
+  background-image: url(http://www.fillmurray.com/130/312);
+  background-size: cover;
+  background-position: center;
+}
+
+.Box:nth-child(27) {
+  background-color: #157A6E;
+  grid-row: span 5;
+  display: none;
+}
+
+.Box:nth-child(25) {
+  background-color: #DB504A;
+  grid-row: span 4;
+}
+
+.Box:nth-child(24) {
+  background-color: #157A6E;
+  grid-row: span 3;
+}
+
+.Box:nth-child(13) {
+  background-image: url(http://www.fillmurray.com/130/313);
+  background-size: cover;
+  background-position: center;
+}
+
+.Box:nth-child(29) {
+  background-color: #157A6E;
+  grid-row: span 5;
+  display: none;
+}
+
+.Box:nth-child(27) {
+  background-color: #DB504A;
+  grid-row: span 4;
+}
+
+.Box:nth-child(26) {
+  background-color: #157A6E;
+  grid-row: span 3;
+}
+
+.Box:nth-child(14) {
+  background-image: url(http://www.fillmurray.com/130/314);
+  background-size: cover;
+  background-position: center;
+}
+
+.Box:nth-child(31) {
+  background-color: #157A6E;
+  grid-row: span 5;
+  display: none;
+}
+
+.Box:nth-child(29) {
+  background-color: #DB504A;
+  grid-row: span 4;
+}
+
+.Box:nth-child(28) {
+  background-color: #157A6E;
+  grid-row: span 3;
+}
+
+.Box:nth-child(15) {
+  background-image: url(http://www.fillmurray.com/130/315);
+  background-size: cover;
+  background-position: center;
+}
+
+.Box:nth-child(33) {
+  background-color: #157A6E;
+  grid-row: span 5;
+  display: none;
+}
+
+.Box:nth-child(31) {
+  background-color: #DB504A;
+  grid-row: span 4;
+}
+
+.Box:nth-child(30) {
+  background-color: #157A6E;
+  grid-row: span 3;
+}
+
+.Box:nth-child(16) {
+  background-image: url(http://www.fillmurray.com/130/316);
+  background-size: cover;
+  background-position: center;
+}
+
+.Box:nth-child(35) {
+  background-color: #157A6E;
+  grid-row: span 5;
+  display: none;
+}
+
+.Box:nth-child(33) {
+  background-color: #DB504A;
+  grid-row: span 4;
+}
+
+.Box:nth-child(32) {
+  background-color: #157A6E;
+  grid-row: span 3;
+}
+
+.Box:nth-child(17) {
+  background-image: url(http://www.fillmurray.com/130/317);
+  background-size: cover;
+  background-position: center;
+}
+
+.Box:nth-child(37) {
+  background-color: #157A6E;
+  grid-row: span 5;
+  display: none;
+}
+
+.Box:nth-child(35) {
+  background-color: #DB504A;
+  grid-row: span 4;
+}
+
+.Box:nth-child(34) {
+  background-color: #157A6E;
+  grid-row: span 3;
+}
+
+.Box:nth-child(18) {
+  background-image: url(http://www.fillmurray.com/130/318);
+  background-size: cover;
+  background-position: center;
+}
+
+.Box:nth-child(39) {
+  background-color: #157A6E;
+  grid-row: span 5;
+  display: none;
+}
+
+.Box:nth-child(37) {
+  background-color: #DB504A;
+  grid-row: span 4;
+}
+
+.Box:nth-child(36) {
+  background-color: #157A6E;
+  grid-row: span 3;
+}
+
+.Box:nth-child(19) {
+  background-image: url(http://www.fillmurray.com/130/319);
+  background-size: cover;
+  background-position: center;
+}
+
+.Box:nth-child(41) {
+  background-color: #157A6E;
+  grid-row: span 5;
+  display: none;
+}
+
+.Box:nth-child(39) {
+  background-color: #DB504A;
+  grid-row: span 4;
+}
+
+.Box:nth-child(38) {
+  background-color: #157A6E;
+  grid-row: span 3;
+}
+
+.Box:nth-child(20) {
+  background-image: url(http://www.fillmurray.com/130/320);
+  background-size: cover;
+  background-position: center;
+}
+
+.Box:nth-child(43) {
+  background-color: #157A6E;
+  grid-row: span 5;
+  display: none;
+}
+
+.Box:nth-child(41) {
+  background-color: #DB504A;
+  grid-row: span 4;
+}
+
+.Box:nth-child(40) {
+  background-color: #157A6E;
+  grid-row: span 3;
+}
+
+.Box:nth-child(21) {
+  background-image: url(http://www.fillmurray.com/130/321);
+  background-size: cover;
+  background-position: center;
+}
+
+.Box:nth-child(45) {
+  background-color: #157A6E;
+  grid-row: span 5;
+  display: none;
+}
+
+.Box:nth-child(43) {
+  background-color: #DB504A;
+  grid-row: span 4;
+}
+
+.Box:nth-child(42) {
+  background-color: #157A6E;
+  grid-row: span 3;
+}
+
+.Box:nth-child(22) {
+  background-image: url(http://www.fillmurray.com/130/322);
+  background-size: cover;
+  background-position: center;
+}
+
+.Box:nth-child(47) {
+  background-color: #157A6E;
+  grid-row: span 5;
+  display: none;
+}
+
+.Box:nth-child(45) {
+  background-color: #DB504A;
+  grid-row: span 4;
+}
+
+.Box:nth-child(44) {
+  background-color: #157A6E;
+  grid-row: span 3;
+}
+
+.Box:nth-child(23) {
+  background-image: url(http://www.fillmurray.com/130/323);
+  background-size: cover;
+  background-position: center;
+}
+
+.Box:nth-child(49) {
+  background-color: #157A6E;
+  grid-row: span 5;
+  display: none;
+}
+
+.Box:nth-child(47) {
+  background-color: #DB504A;
+  grid-row: span 4;
+}
+
+.Box:nth-child(46) {
+  background-color: #157A6E;
+  grid-row: span 3;
+}
+
+.Box:nth-child(24) {
+  background-image: url(http://www.fillmurray.com/130/324);
+  background-size: cover;
+  background-position: center;
+}
+
+.Box:nth-child(51) {
+  background-color: #157A6E;
+  grid-row: span 5;
+  display: none;
+}
+
+.Box:nth-child(49) {
+  background-color: #DB504A;
+  grid-row: span 4;
+}
+
+.Box:nth-child(48) {
+  background-color: #157A6E;
+  grid-row: span 3;
+}
+
+.Box:nth-child(25) {
+  background-image: url(http://www.fillmurray.com/130/325);
+  background-size: cover;
+  background-position: center;
+}
+
+.Box:nth-child(53) {
+  background-color: #157A6E;
+  grid-row: span 5;
+  display: none;
+}
+
+.Box:nth-child(51) {
+  background-color: #DB504A;
+  grid-row: span 4;
+}
+
+.Box:nth-child(50) {
+  background-color: #157A6E;
+  grid-row: span 3;
+}
+
+.Box:nth-child(26) {
+  background-image: url(http://www.fillmurray.com/130/326);
+  background-size: cover;
+  background-position: center;
+}
+
+.Box:nth-child(55) {
+  background-color: #157A6E;
+  grid-row: span 5;
+  display: none;
+}
+
+.Box:nth-child(53) {
+  background-color: #DB504A;
+  grid-row: span 4;
+}
+
+.Box:nth-child(52) {
+  background-color: #157A6E;
+  grid-row: span 3;
+}
+
+.Box:nth-child(27) {
+  background-image: url(http://www.fillmurray.com/130/327);
+  background-size: cover;
+  background-position: center;
+}
+
+.Box:nth-child(57) {
+  background-color: #157A6E;
+  grid-row: span 5;
+  display: none;
+}
+
+.Box:nth-child(55) {
+  background-color: #DB504A;
+  grid-row: span 4;
+}
+
+.Box:nth-child(54) {
+  background-color: #157A6E;
+  grid-row: span 3;
+}
+
+.Box:nth-child(28) {
+  background-image: url(http://www.fillmurray.com/130/328);
+  background-size: cover;
+  background-position: center;
+}
+
+.Box:nth-child(59) {
+  background-color: #157A6E;
+  grid-row: span 5;
+  display: none;
+}
+
+.Box:nth-child(57) {
+  background-color: #DB504A;
+  grid-row: span 4;
+}
+
+.Box:nth-child(56) {
+  background-color: #157A6E;
+  grid-row: span 3;
+}
+
+.Box:nth-child(29) {
+  background-image: url(http://www.fillmurray.com/130/329);
+  background-size: cover;
+  background-position: center;
+}
+
+.Box:nth-child(61) {
+  background-color: #157A6E;
+  grid-row: span 5;
+  display: none;
+}
+
+.Box:nth-child(59) {
+  background-color: #DB504A;
+  grid-row: span 4;
+}
+
+.Box:nth-child(58) {
+  background-color: #157A6E;
+  grid-row: span 3;
+}
+
+.Box:nth-child(30) {
+  background-image: url(http://www.fillmurray.com/130/330);
+  background-size: cover;
+  background-position: center;
+}
+
+.Box:nth-child(63) {
+  background-color: #157A6E;
+  grid-row: span 5;
+  display: none;
+}
+
+.Box:nth-child(61) {
+  background-color: #DB504A;
+  grid-row: span 4;
+}
+
+.Box:nth-child(60) {
+  background-color: #157A6E;
+  grid-row: span 3;
+}
+
+@media screen and (min-width: 450px) {
+  .Grid {
+    -ms-grid-columns: (1fr)[5];
+        grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .GridWrapper {
+    padding: 20px;
+    height: 600px;
+  }
+  .Grid {
+    grid-gap: 10px;
+    -ms-grid-columns: (1fr)[6];
+        grid-template-columns: repeat(6, 1fr);
+    min-height: 700px;
+  }
+  .Box:nth-child(1) {
+    background-image: url(http://www.fillmurray.com/130/303);
+  }
+  .Box:nth-child(5) {
+    display: block;
+  }
+  .Box:nth-child(2) {
+    background-image: url(http://www.fillmurray.com/130/306);
+  }
+  .Box:nth-child(7) {
+    display: block;
+  }
+  .Box:nth-child(3) {
+    background-image: url(http://www.fillmurray.com/130/309);
+  }
+  .Box:nth-child(9) {
+    display: block;
+  }
+  .Box:nth-child(4) {
+    background-image: url(http://www.fillmurray.com/130/312);
+  }
+  .Box:nth-child(11) {
+    display: block;
+  }
+  .Box:nth-child(5) {
+    background-image: url(http://www.fillmurray.com/130/315);
+  }
+  .Box:nth-child(13) {
+    display: block;
+  }
+  .Box:nth-child(6) {
+    background-image: url(http://www.fillmurray.com/130/318);
+  }
+  .Box:nth-child(15) {
+    display: block;
+  }
+  .Box:nth-child(7) {
+    background-image: url(http://www.fillmurray.com/130/321);
+  }
+  .Box:nth-child(17) {
+    display: block;
+  }
+  .Box:nth-child(8) {
+    background-image: url(http://www.fillmurray.com/130/324);
+  }
+  .Box:nth-child(19) {
+    display: block;
+  }
+  .Box:nth-child(9) {
+    background-image: url(http://www.fillmurray.com/130/327);
+  }
+  .Box:nth-child(21) {
+    display: block;
+  }
+  .Box:nth-child(10) {
+    background-image: url(http://www.fillmurray.com/130/330);
+  }
+  .Box:nth-child(23) {
+    display: block;
+  }
+  .Box:nth-child(11) {
+    background-image: url(http://www.fillmurray.com/130/333);
+  }
+  .Box:nth-child(25) {
+    display: block;
+  }
+  .Box:nth-child(12) {
+    background-image: url(http://www.fillmurray.com/130/336);
+  }
+  .Box:nth-child(27) {
+    display: block;
+  }
+  .Box:nth-child(13) {
+    background-image: url(http://www.fillmurray.com/130/339);
+  }
+  .Box:nth-child(29) {
+    display: block;
+  }
+  .Box:nth-child(14) {
+    background-image: url(http://www.fillmurray.com/130/342);
+  }
+  .Box:nth-child(31) {
+    display: block;
+  }
+  .Box:nth-child(15) {
+    background-image: url(http://www.fillmurray.com/130/345);
+  }
+  .Box:nth-child(33) {
+    display: block;
+  }
+  .Box:nth-child(16) {
+    background-image: url(http://www.fillmurray.com/130/348);
+  }
+  .Box:nth-child(35) {
+    display: block;
+  }
+  .Box:nth-child(17) {
+    background-image: url(http://www.fillmurray.com/130/351);
+  }
+  .Box:nth-child(37) {
+    display: block;
+  }
+  .Box:nth-child(18) {
+    background-image: url(http://www.fillmurray.com/130/354);
+  }
+  .Box:nth-child(39) {
+    display: block;
+  }
+  .Box:nth-child(19) {
+    background-image: url(http://www.fillmurray.com/130/357);
+  }
+  .Box:nth-child(41) {
+    display: block;
+  }
+  .Box:nth-child(20) {
+    background-image: url(http://www.fillmurray.com/130/360);
+  }
+  .Box:nth-child(43) {
+    display: block;
+  }
+  .Box:nth-child(21) {
+    background-image: url(http://www.fillmurray.com/130/363);
+  }
+  .Box:nth-child(45) {
+    display: block;
+  }
+  .Box:nth-child(22) {
+    background-image: url(http://www.fillmurray.com/130/366);
+  }
+  .Box:nth-child(47) {
+    display: block;
+  }
+  .Box:nth-child(23) {
+    background-image: url(http://www.fillmurray.com/130/369);
+  }
+  .Box:nth-child(49) {
+    display: block;
+  }
+  .Box:nth-child(24) {
+    background-image: url(http://www.fillmurray.com/130/372);
+  }
+  .Box:nth-child(51) {
+    display: block;
+  }
+  .Box:nth-child(25) {
+    background-image: url(http://www.fillmurray.com/130/375);
+  }
+  .Box:nth-child(53) {
+    display: block;
+  }
+  .Box:nth-child(26) {
+    background-image: url(http://www.fillmurray.com/130/378);
+  }
+  .Box:nth-child(55) {
+    display: block;
+  }
+  .Box:nth-child(27) {
+    background-image: url(http://www.fillmurray.com/130/381);
+  }
+  .Box:nth-child(57) {
+    display: block;
+  }
+  .Box:nth-child(28) {
+    background-image: url(http://www.fillmurray.com/130/384);
+  }
+  .Box:nth-child(59) {
+    display: block;
+  }
+  .Box:nth-child(29) {
+    background-image: url(http://www.fillmurray.com/130/387);
+  }
+  .Box:nth-child(61) {
+    display: block;
+  }
+  .Box:nth-child(30) {
+    background-image: url(http://www.fillmurray.com/130/390);
+  }
+  .Box:nth-child(63) {
+    display: block;
+  }
+}
+/*# sourceMappingURL=PinterestGrid.module.css.map */

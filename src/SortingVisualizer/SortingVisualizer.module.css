@@ -1,0 +1,106 @@
+.VisualizerWrapper {
+  overflow-X: hidden;
+  background-color: #fff;
+  padding: 10px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+.VisualizerWrapper > div > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.VisualizerWrapper p {
+  margin-bottom: 5px;
+}
+
+.VisualizerWrapper h1, .VisualizerWrapper p {
+  text-align: center;
+}
+
+.HiddenOnMobile {
+  display: none;
+}
+
+.Bar {
+  width: 2px;
+  margin: 0 1px;
+}
+
+.BarWrapper {
+  height: 550px;
+  min-width: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+}
+
+.Settings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 0 0 10px;
+  min-width: 100px;
+}
+
+.Settings button {
+  margin: 0 0 10px 0;
+  background-color: white;
+  border-radius: 5px;
+  color: #444444;
+  padding: 5px;
+  width: 100%;
+}
+
+.Settings button:focus {
+  outline: none;
+}
+
+.Settings button:disabled {
+  opacity: 0.8;
+  cursor: no-drop;
+  background-color: #D3D3D3;
+}
+
+@media screen and (min-width: 768px) {
+  .VisualizerWrapper {
+    padding: 3%;
+  }
+  .HiddenOnMobile {
+    display: block;
+  }
+  .HiddenOnDesktop {
+    display: none;
+  }
+}
+
+.SuccessMsg {
+  color: green;
+}
+
+@media screen and (min-width: 850px) {
+  .VisualizerWrapper {
+    padding: 2% 4.5%;
+  }
+}
+/*# sourceMappingURL=SortingVisualizer.module.css.map */

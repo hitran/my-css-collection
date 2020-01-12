@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,QAAQ,CAAC;EACL,OAAO,EAAE,IAAI;EACb,UAAU,EAAE,KAAK;EACjB,KAAK,EAAE,IAAI;EACX,gBAAgB,ECHO,IAAI;EDI3B,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,UAAU,EAAE,UAAU;EACtB,UAAU,EAAE,MAAM;EAClB,eAAe,EAAE,MAAM;CAC1B",
+    "sources": [
+        "Canvas.module.scss",
+        "../common-modules/_color.scss"
+    ],
+    "names": [],
+    "file": "Canvas.module.css"
+}

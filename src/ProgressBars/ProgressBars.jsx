@@ -13,7 +13,7 @@ function ProgressBars() {
 
     useEffect(() => {
         setIsLoading(true);
-        axios.get('http://pb-api.herokuapp.com/bar')
+        axios.get('https://pb-api.herokuapp.com/bar')
         .then(
             response => {
                 setData(response.data);

@@ -3,7 +3,7 @@ import Bars from './Bars/Bars';
 import Controls from './Controls/Controls';
 import Loader from '../Loader/Loader';
 import styles from './ProgressBars.module.scss';
-const axios = require('axios');
+import axios from 'axios';
 
 function ProgressBars() {
     const [data, setData] = useState({});
@@ -19,8 +19,8 @@ function ProgressBars() {
                 setData(response.data);
                 setBarValues(response.data.bars);
                 setIsLoading(false);
-            },
-            error => console.log(error))
+            })
+        .catch(error => console.log(error))
     },[])
 
     

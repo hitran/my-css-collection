@@ -51,7 +51,6 @@
         &:nth-child(#{$i*2}) {
             background-color: $bright-green;
             grid-row: span 3;
-            
         }
     }
       

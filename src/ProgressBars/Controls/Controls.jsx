@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Controls.module.scss';
+import PropTypes from 'prop-types';
 
 const controls = (props) => {
 
@@ -35,3 +36,11 @@ const controls = (props) => {
 }
 
 export default controls;
+
+controls.propTypes = {
+    buttons: PropTypes.array,
+    limit: PropTypes.number,
+    total: PropTypes.number,
+    onSelectBar: PropTypes.func,
+    onControlButtonClick: PropTypes.func
+}

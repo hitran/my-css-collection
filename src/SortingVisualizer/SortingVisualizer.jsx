@@ -20,7 +20,10 @@ export default function AlgorithmVisualizer() {
     const resetArray = () => {
         // create an array of random numbers to be sorted
         let tempValues = [];
-        for (let i = 0; i < 150; i++) {
+        // for (let i = 0; i < 150; i++) {
+        //     tempValues.push(Math.floor(Math.random() * 500));
+        // }
+        for (let i = 0; i < 5; i++) {
             tempValues.push(Math.floor(Math.random() * 500));
         }
         setRandomValues(tempValues);

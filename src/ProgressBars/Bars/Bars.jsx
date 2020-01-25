@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Bars.module.scss';
+import PropTypes from 'prop-types';
 
 const bars = (props) => {
     const DEFAULT_BACKGROUND_COLOR = "turquoise";
@@ -32,3 +33,8 @@ const bars = (props) => {
 }
 
 export default bars;
+
+bars.propTypes = {
+    bars: PropTypes.array,
+    limit: PropTypes.number
+}

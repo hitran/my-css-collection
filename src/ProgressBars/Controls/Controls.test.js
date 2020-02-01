@@ -1,32 +1,33 @@
 import React from 'react';
-import { render, unmountComponentAtNode } from "react-dom";
-import { act } from "react-dom/test-utils";
+import { configure, shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import Controls from './Controls';
 
-let container = null;
+configure({adapter: new Adapter()});
 
-beforeEach(() => {
-    container = document.createElement("div");
-    document.body.appendChild(container);
-})
+describe('<Controls/>', () => {
+    const setup = (props) => {
+        return shallow(<Controls {...props}/>)
+    }
+    const findByDataAttr = (wrapper, attr) => {
+        return wrapper.find(`[data-test="${attr}"]`);
+    }
 
-afterEach(() => {
-    unmountComponentAtNode(container);
-    container.remove();
-    container = null;
-});
-
-it("renders without buttons values", () => {
-    act(() => {
-      render(<Controls buttons={[]}/>, container);
+    test('renders controls without data', () => {
+        const wrapper = setup({buttons: [], total: 0})
+        const controlButtons = findByDataAttr(wrapper, 'control-button');
+        const selectOption = findByDataAttr(wrapper, 'select-option');
+        expect(controlButtons.length).toBe(0);
+        expect(selectOption.length).toBe(0);
     });
-    expect(container.textContent).toBe("");
-});
 
-it("renders with limit and buttons", () => {
-    act(() => {
-        render(<Controls total={1} buttons={[10, 12, -10]} limit={10}/>, container);
-        expect(container.textContent).toBe("# Progress 11012-10")
+    test('renders controls with data', () => {
+        const props = {total:2, buttons:[10, 12, -10], limit:10}
+        const wrapper = setup(props)
+        const controlButtons = findByDataAttr(wrapper, 'control-button');
+        const selectOption = findByDataAttr(wrapper, 'select-option');
+        expect(controlButtons.length).toBe(3);
+        expect(selectOption.length).toBe(2);
+        expect(wrapper.text()).toContain(props.buttons.join(""))
     })
 })
-

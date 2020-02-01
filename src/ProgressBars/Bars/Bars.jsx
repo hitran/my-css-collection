@@ -20,7 +20,7 @@ const bars = (props) => {
     let bars = props.bars.map((value, index) => {
             return (
                 <div className={styles.BarWrapper} key={index}>
-                    <span>{getBarValue(value, props.limit)}%</span>
+                    <span data-test="bars">{getBarValue(value, props.limit)}%</span>
                     <div 
                         className={styles.Bar} 
                         style={{width: `${getBarLength(value, props.limit, 290)}px`, backgroundColor: `${value > props.limit ? HIGHLIGHT_BACKGROUND_COLOR : DEFAULT_BACKGROUND_COLOR}`}}>

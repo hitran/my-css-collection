@@ -7,7 +7,7 @@ const controls = (props) => {
     // create dropdown options
     let options = []
     for (let i = 0; i < props.total; i ++) {
-        options.push(<option key={i+1} value={i}># Progress {i + 1}</option>)
+        options.push(<option data-test="select-option" key={i+1} value={i}># Progress {i + 1}</option>)
     }
 
     // update bar whenever user select another option
@@ -21,14 +21,14 @@ const controls = (props) => {
     }
 
     // create control buttons
-    let buttons = props.buttons.map((value, index) => <button key={index} onClick={() => {onControlButtonClick(value)}}>{value}</button>);
+    let buttons = props.buttons.map((value, index) => <button data-test="control-button" key={index} onClick={() => {onControlButtonClick(value)}}>{value}</button>);
     
     return(
         <div className={styles.ControlsWrapper}>
             <select onChange={onDropdownBarSelect}>
                 {options}
             </select>
-            <div className={styles.ButtonWrapper}>
+            <div  className={styles.ButtonWrapper}>
                 {buttons}
             </div>
         </div>

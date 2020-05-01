@@ -1,0 +1,70 @@
+{
+    "board_label": "Studio Board",
+    "board_id" : 1,
+    "lists": [
+        {
+            "list_id": 1,
+            "list_label": "Backlog",
+            "items": [
+                {
+                    "item_id": 1,
+                    "item_label" : "Company website redesign",
+                    "priority": "Low"
+                },
+                {
+                    "item_id": 2,
+                    "item_label" : "Mobile app login process prototype",
+                    "priority": "Med"
+                },
+                {
+                    "item_id": 3,
+                    "item_label" : "Onboarding Design",
+                    "priority": "High"
+                }
+            ]
+        },
+        { 
+            "list_id": 2,
+            "list_label": "In Progress",
+            "items": [
+                {
+                    "item_id": 1,
+                    "item_label" : "Research and strategy for upcoming projects",
+                    "priority": "Low"
+                },
+                {
+                    "item_id": 2,
+                    "item_label" : "Write tech doc for newly requested feature",
+                    "priority": "Med"
+                },
+                {
+                    "item_id": 3,
+                    "item_label" : "Review social media posts",
+                    "priority": "High"
+                },
+                {
+                    "item_id": 4,
+                    "item_label" : "Campaign Report",
+                    "priority": "Low"
+                }
+            ]
+        },
+        { 
+            "list_id": 3,
+            "list_label": "Completed",
+            "items": [
+                {
+                    "item_id": 1,
+                    "item_label" : "Page Navigation",
+                    "priority": "Low"
+                },
+                {
+                    "item_id": 2,
+                    "item_label" : "New member orientation",
+                    "priority": "Med"
+                }
+            ]
+        }
+    ]
+    
+}

@@ -1,0 +1,25 @@
+.Dates {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    > div {
+        width: 100%;
+    }
+}
+.Date {
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 12%;
+    height: 50px;
+    padding: 10px 0;
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+}
+.Month {
+    margin: 10px;
+}
+
+.today {
+    background-color: pink;
+}

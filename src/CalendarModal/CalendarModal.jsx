@@ -9,6 +9,7 @@ export default function CalendarModal() {
     const [startTime, setStartTime] = useState(9);
     const [endTime, setEndTime] = useState(20);
     const [confirmationMessage, setConfirmationMessage] = useState('');
+    const [selectedDate, setSelectedDate] = useState(null);
 
     const updateTime = (value, type) => {
         switch (type) {
@@ -34,18 +35,22 @@ export default function CalendarModal() {
 
     const confirmDateTime = () => {
         if (validateTime(startTime, endTime)) {
-            setConfirmationMessage('Valid Time')
+            setConfirmationMessage(`Selected Date: ${selectedDate ? new Date(selectedDate) : new Date()}, Selected Time: ${startTime} - ${endTime}`)
         } else {
             setConfirmationMessage('Invalid Time')
         }
     }
 
+    const selectDate = (date) => {
+        setSelectedDate(date)
+    }
+
     return (
         <div className={styles.CalendarModal}>
             <h1 className="Title">Calendar</h1>
-            <p>Select date and time for your appointment</p>
+            <p>Please select date and time for your appointment</p>
             <p>{confirmationMessage}</p>
-            <Dates />
+            <Dates updateSelectedDate={selectDate}/>
             <TimeDropdown handleTimeChange={updateTime} start={startTime} end={endTime} />
             <TimeSlider handleTimeChange={updateTime} start={startTime} end={endTime} />
             <button className="btn btn-primary" onClick={confirmDateTime}>Confirm</button>

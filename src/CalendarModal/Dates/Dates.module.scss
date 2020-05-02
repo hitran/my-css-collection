@@ -1,3 +1,4 @@
+
 .Dates {
     display: flex;
     flex-wrap: wrap;
@@ -6,8 +7,14 @@
         width: 100%;
     }
 }
-.Date {
-    border: 1px solid black;
+
+.Month {
+    margin: 10px;
+    font-weight: bold;
+}
+
+.DayOfWeek {
+    font-weight: bold;
     border-radius: 5px;
     width: 12%;
     height: 50px;
@@ -15,11 +22,4 @@
     display: inline-block;
     margin: 10px;
     text-align: center;
-}
-.Month {
-    margin: 10px;
-}
-
-.today {
-    background-color: pink;
 }

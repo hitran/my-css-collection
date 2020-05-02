@@ -13,6 +13,8 @@ export const months = {
     11: 'December'
 };
 
+export const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
 export const timeFormatter = (time) => {
     if (time > 12) {
         return `${time - 12} PM`;
@@ -25,3 +27,13 @@ export const timeFormatter = (time) => {
 // TIME TYPE
 export const START_TIME = 'start time';
 export const END_TIME = 'end time';
+
+// GET TMR TIME
+export const getTmrTime = (todayTime) => {
+    return todayTime + 24 * 60 * 60 * 1000;
+}
+
+// CONSTANTS
+export const ZERO = 0;
+export const ONE = 1;
+export const FOURTEEN = 14;

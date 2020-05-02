@@ -12,3 +12,16 @@ export const months = {
     10: 'November',
     11: 'December'
 };
+
+export const timeFormatter = (time) => {
+    if (time > 12) {
+        return `${time - 12} PM`;
+    } else if (time === 12) {
+        return `${time} PM`;
+    }
+    return `${time} AM`;
+}
+
+// TIME TYPE
+export const START_TIME = 'start time';
+export const END_TIME = 'end time';

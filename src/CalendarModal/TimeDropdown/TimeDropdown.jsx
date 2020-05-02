@@ -1,33 +1,43 @@
 import React, {useState, useEffect} from 'react';
 import styles from './TimeDropdown.module.scss';
+import * as Utils from '../CalendarUtils';
 
-export default function TimeDropdown() {
-    const [times, setTimes] = useState([])
+export default function TimeDropdown({handleTimeChange, start, end}) {
+    const [timeRange, setTimeRange] = useState([]);
+    const [startTime, setStartTime] = useState(start);
+    const [endTime, setEndTime] = useState(end);
 
-    const createTime = () => {
-        const timeValues = [...times]
-        for (let i = 0; i < 12; i ++) {
-            if (i <= 3) {
-                timeValues.push(`${i+9} AM`)
-            } else {
-                timeValues.push(`${i} PM`)
-            }
+    const createTimeRange = () => {
+        const timeValues = [...timeRange];
+        for (let i = 9; i <= 20; i ++) {
+            timeValues.push(i);
         }
-        setTimes(timeValues)
+        setTimeRange(timeValues)
         console.log(timeValues);
     }
 
-    useEffect(() => {createTime()},[]);
+    useEffect(() => {createTimeRange()},[]);
+
 
     return (
         <div className={styles.DropdownWrapper}>
             <h4>From </h4>
-            <select className={styles.Dropdown}>
-                {times.map(time => <option value={time} key={time}>{time}</option>)}
+            <select className={styles.Dropdown} onChange={e => handleTimeChange(e.target.value, Utils.START_TIME)} value={start}>
+                {timeRange.map(time => <option value={time} key={time}>{Utils.timeFormatter(time)}</option>)}
             </select>
             <h4>To </h4>
-            <select className={styles.Dropdown}>
-                {times.map(time => <option value={time} key={time}>{time}</option>)}
+            <select 
+                className={styles.Dropdown}
+                value = {end}
+                onChange={e => handleTimeChange(e.target.value, Utils.END_TIME)}>
+
+                {timeRange.map((time, i) => (
+                <option 
+                    value={time} 
+                    selected={i === timeRange.length - 1 ? true : false } 
+                    key={time}>{Utils.timeFormatter(time)}
+                </option>)
+                )}
             </select>
         </div>
     )

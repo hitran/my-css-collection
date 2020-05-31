@@ -37,3 +37,4 @@ export const getTmrTime = (todayTime) => {
 export const ZERO = 0;
 export const ONE = 1;
 export const FOURTEEN = 14;
+export const ONEDAY = 24 * 60 * 60 * 1000;

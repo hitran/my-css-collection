@@ -24,12 +24,9 @@ function Router() {
                 <Route path="/progress-bars">
                     <ProgressBars />
                 </Route>
-                {/* <Route path="/drag-and-drop">
-                    <DragAndDrop />
-                </Route> */}
-                <Route path="/calendar">
+                {/* <Route path="/calendar">
                     <CalendarModal />
-                </Route>
+                </Route> */}
             </Switch>
         </React.Suspense>
     )

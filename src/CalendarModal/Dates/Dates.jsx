@@ -7,7 +7,8 @@ export default function Dates({ updateSelectedDate }) {
     const [thisMonthDates, setThisMonthDates] = useState([]);
     const [nextMonthDates, setNextMonthDates] = useState([]);
     const [currentSelectedDate, setCurrentSelectedDate] = useState(null);
-
+    const today = new Date();
+    const todayDay = today.getDate();
     const isSameMonth = (currentDate, dateToCheck) => {
         const toCheckMonth = new Date(dateToCheck).getMonth();
         const currentMonth = new Date(currentDate).getMonth();
@@ -15,19 +16,42 @@ export default function Dates({ updateSelectedDate }) {
             return false;
         }
         return true;
-
     }
+
+    const isLastDayOfWeek = (date) => {
+        console.log('date, today', date, today.getTime())
+        if (date === today.getTime()) {
+            console.log('today is not weekend')
+            return false
+        } else if (new Date(date).getDay() === 6) {
+            return true
+        }
+        return false
+    }
+
+    const getStartDate = () => {
+        const firstDay = today.getTime() - (6 - today.getDay())  * Utils.ONEDAY;
+        return new Date(firstDay);
+    }
+
     const addNextTenDatesToMonth = () => {
-        let currentDateTime = new Date().getTime();
+        let currentDateTime = getStartDate().getTime();
         const newThisMonth = [...thisMonthDates, currentDateTime];
         const newNextMonth = [...nextMonthDates];
-        for (let i = 0; i < 13; i++) {
-            const nextDateTime = Utils.getTmrTime(currentDateTime);
-            if (isSameMonth(currentDateTime, nextDateTime)) {
-                newThisMonth.push(nextDateTime)
-            } else {
-                newNextMonth.push(nextDateTime);
+        let activeDays = 0;
+        const todayTime = today.getTime();
+        while (activeDays < 10) {
+            if (currentDateTime > todayTime) {
+                activeDays += 1
+                console.log(new Date(currentDateTime), activeDays)
             }
+            const nextDateTime = Utils.getTmrTime(currentDateTime);
+            newThisMonth.push(nextDateTime)
+            // if (isSameMonth(currentDateTime, nextDateTime)) {
+            //     newThisMonth.push(nextDateTime)
+            // } else {
+            //     newNextMonth.push(nextDateTime);
+            // }
             currentDateTime = nextDateTime;
         }
         setThisMonthDates(newThisMonth);
@@ -43,6 +67,13 @@ export default function Dates({ updateSelectedDate }) {
         addNextTenDatesToMonth();
     }, []);
 
+    const isDisabled = (date) => {
+        if (new Date(date).getDate() < todayDay || 
+            ((new Date(date).getDate() > todayDay) && (new Date(date).getMonth() < today.getMonth()))) {
+                return true
+        } 
+        return false;
+    }
 
     return (
         <div className={styles.Dates}>
@@ -65,7 +96,8 @@ export default function Dates({ updateSelectedDate }) {
                             key={i}
                             dateValue={date}
                             dateIndex = {i}
-                            isToday = {i === 0 ? true : false} 
+                            isToday = {new Date(date).getDate() === todayDay ? true : false} 
+                            isDisabled = {isDisabled (date) ? true : false}
                             onClick={(i, date) => handleSelectedDate(i, date)}
                             selectedDate = {currentSelectedDate}
                             onSelectDate = {handleSelectedDate}/>
@@ -90,7 +122,8 @@ export default function Dates({ updateSelectedDate }) {
                         <DateComponent
                             key={i}
                             dateValue={date}
-                            isToday = {i === 0 ? true : false}
+                            isToday = {new Date(date).getDate() === todayDay ? true : false}
+                            isDisabled = {isDisabled(date) ? true : false}
                             dateIndex ={i}
                             selectedDate = {currentSelectedDate}
                             onSelectDate = {handleSelectedDate}/>
